@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
 </head>
 <body>
-    <div class="container" >
+    <div id="app" class="container" >
         @include('includes.topbar')
 
         @yield('content')
@@ -28,8 +28,23 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+{{-- Vue js --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js"></script>
+
 @yield('scripts')
 <script>
+    var vm = new Vue({
+        'el': '#app',
+        'data': {
+            selectedTasks: []
+        },
+        'methods': {
+            'addTaskSelection': function(){
+                console.log(this.selectedTasks);
+            }
+        }
+    });
     $(document).foundation();
 </script>
 </body>

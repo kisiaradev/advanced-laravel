@@ -23,12 +23,30 @@
         </p>
 
         <h2>Assigned To</h2>
-
         @foreach($task->users as $user)
             <p>
                 {{ $user->name }}
             </p>
         @endforeach
+
+        <h2>Actions</h2>
+        <ul class="menu" id="task-actions">
+            <li>
+                <a class="task-action" href="">
+                    <i class="fa fa-edit fa-4x"></i>
+                </a>
+            </li>
+            <li>
+                <a class="task-action" href="">
+                    <i class="fa fa-remove fa-4x"></i>
+                </a>
+            </li>
+            <li>
+                <a class="task-action" href="">
+                    <i class="fa fa-envelope fa-4x"></i>
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
 @endsection

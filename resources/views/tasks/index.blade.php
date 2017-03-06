@@ -19,7 +19,7 @@
                 <ul class="menu columns small-6">
                     <li><a href=""><i class="fa fa-trash"></i></a></li>
                     <li><a href="" class="custom-br"><i class="fa fa-envelope"></i></a></li>
-                    <li><a href="" class="custom-br"><i class="fa fa-users"></i></a></li>
+                    {{--<li><a href="" class="custom-br"><i class="fa fa-users"></i></a></li>--}}
                     <li><a href="" class="custom-br"><i class="fa fa-edit"></i></a></li>
                 </ul>
             </div>
@@ -42,7 +42,7 @@
                             @foreach($tasks as $task)
                                 <tr>
                                     <td>
-                                        <input type="checkbox">
+                                        <input @click="addTaskSelection()" value="{{ $task->slug }}" v-model="selectedTasks" type="checkbox">
                                         <a href="{{ url('tasks/'.$task->slug) }}" class="task-name">
                                             <strong>{{ $task->name }}</strong>
                                         </a>
@@ -70,6 +70,10 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+vh
 @endsection
 
 

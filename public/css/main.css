@@ -215,3 +215,13 @@ textarea{
     font-size: 12px;
 }
 
+#task-actions>li>a{
+    margin: 10px 100px 10px 0;
+    padding: 0;
+    color: #8c8c8c;
+}
+
+#task-actions>li>a:hover{
+    color: #1abc9c;
+}
+
